@@ -1,33 +1,15 @@
 import { useState } from "react";
+import useForm from "../hooks/useForm";
 
 function Experience() {
-  const [formData, setFormData] = useState({
-    company: "",
-    position: "",
-    responsibilities: "",
-    from: "",
-    until: "",
-  });
-
-  const [isEditing, setIsEditing] = useState(true);
-
-  function handleChange(event) {
-    const { name, value } = event.target;
-
-    setFormData({
-      ...formData,
-      [name]: value,
+  const { formData, isEditing, handleChange, handleSubmit, handleEdit } =
+    useForm({
+      company: "",
+      position: "",
+      responsibilities: "",
+      from: "",
+      until: "",
     });
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    setIsEditing(false);
-  }
-
-  function handleEdit() {
-    setIsEditing(true);
-  }
 
   return (
     <section>

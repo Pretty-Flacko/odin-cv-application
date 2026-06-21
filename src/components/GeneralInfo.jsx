@@ -1,31 +1,13 @@
 import { useState } from "react";
+import useForm from "../hooks/useForm";
 
 function GeneralInfo() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-  });
-
-  const [isEditing, setIsEditing] = useState(true);
-
-  function handleChange(event) {
-    const { name, value } = event.target;
-
-    setFormData({
-      ...formData,
-      [name]: value,
+  const { formData, isEditing, handleChange, handleSubmit, handleEdit } =
+    useForm({
+      name: "",
+      email: "",
+      phone: "",
     });
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    setIsEditing(false);
-  }
-
-  function handleEdit() {
-    setIsEditing(true);
-  }
 
   return (
     <section>
