@@ -10,7 +10,7 @@ function GeneralInfo() {
     });
 
   return (
-    <section>
+    <section className="section">
       <h2>General Information</h2>
 
       {isEditing ? (
@@ -46,9 +46,15 @@ function GeneralInfo() {
         </form>
       ) : (
         <div>
-          <p>Name: {formData.name}</p>
-          <p>Email: {formData.email}</p>
-          <p>Phone: {formData.phone}</p>
+          <p>
+            <strong>Name:</strong> {formData.name}
+          </p>
+          <p>
+            <strong>Email:</strong> {formData.email}
+          </p>
+          <p>
+            <strong>Phone:</strong> {formData.phone}
+          </p>
           <button onClick={handleEdit}>Edit</button>
         </div>
       )}

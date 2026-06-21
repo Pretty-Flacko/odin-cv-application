@@ -12,7 +12,7 @@ function Experience() {
     });
 
   return (
-    <section>
+    <section className="section">
       <h2>Experience</h2>
 
       {isEditing ? (
@@ -66,11 +66,21 @@ function Experience() {
         </form>
       ) : (
         <div>
-          <p>Company: {formData.company}</p>
-          <p>Position: {formData.position}</p>
-          <p>Responsibilities: {formData.responsibilities}</p>
-          <p>From: {formData.from}</p>
-          <p>Until: {formData.until}</p>
+          <p>
+            <strong>Company</strong>: {formData.company}
+          </p>
+          <p>
+            <strong>Position</strong>: {formData.position}
+          </p>
+          <p>
+            <strong>Responsibilities</strong>: {formData.responsibilities}
+          </p>
+          <p>
+            <strong>From</strong>: {formData.from}
+          </p>
+          <p>
+            <strong>Until</strong>: {formData.until}
+          </p>
 
           <button onClick={handleEdit}>Edit</button>
         </div>

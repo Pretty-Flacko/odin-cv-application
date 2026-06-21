@@ -10,7 +10,7 @@ function Education() {
     });
 
   return (
-    <section>
+    <section className="section">
       <h2>Education</h2>
 
       {isEditing ? (
@@ -46,9 +46,15 @@ function Education() {
         </form>
       ) : (
         <div>
-          <p>School: {formData.school}</p>
-          <p>Title: {formData.title}</p>
-          <p>Date: {formData.date}</p>
+          <p>
+            <strong>School:</strong> {formData.school}
+          </p>
+          <p>
+            <strong>Title:</strong> {formData.title}
+          </p>
+          <p>
+            <strong>Date:</strong> {formData.date}
+          </p>
           <button onClick={handleEdit}>Edit</button>
         </div>
       )}
